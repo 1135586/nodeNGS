@@ -1,7 +1,7 @@
 var http = require('http');
 
 //var needData = {}
-
+var Pogoda = function(){
 var data = JSON.stringify(
   {
     "method":"getForecast",
@@ -35,13 +35,19 @@ request.on('response',function(response){
    response.on('end', function() {
      var result = JSON.parse(data);
 //      console.log(result);
-
-      console.log(result.result.date);
+      console.log(result.result.temp_current_c);
+      //cities = result.result.cities_to_forecast;
+      //cities.forEach(function(item){console.log(item)});
+      //console.log(result.result.cities_to_forecast);
 
      return result
 
    });
  });
 
-console.log("!!!!!!!!!!!!!!!!!!!!!");
+};
 
+var CronJob = require('cron').CronJob;
+new CronJob('*/30 * * * * *', function() {
+  new Pogoda();
+}, null, true, 'America/Los_Angeles');

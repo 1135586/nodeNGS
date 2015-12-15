@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/1135586/nodeNGS/issues"
   },
-  "homepage": "https://github.com/1135586/nodeNGS"
+  "homepage": "https://github.com/1135586/nodeNGS",
+  "dependencies": {
+    "cron": "^1.1.0"
+  }
 }
