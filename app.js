@@ -1,5 +1,4 @@
 var http = require('http');
-var str2json= require('string-to-json');
 
 //var needData = {}
 
